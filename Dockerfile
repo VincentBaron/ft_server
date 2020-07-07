@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/03 00:12:04 by vbaron            #+#    #+#              #
-#    Updated: 2020/07/07 14:43:23 by vbaron           ###   ########.fr        #
+#    Updated: 2020/07/07 16:40:07 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,3 +29,5 @@ EXPOSE 80
 ENTRYPOINT ["script.sh"]
 
 CMD ["bash"]
+
+VOLUME /volume/data

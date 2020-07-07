@@ -6,17 +6,26 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/03 00:12:04 by vbaron            #+#    #+#              #
-#    Updated: 2020/06/03 00:53:43 by vbaron           ###   ########.fr        #
+#    Updated: 2020/07/07 14:43:23 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM debian:buster
 
-RUN sudo apt update \
-    && sudo apt install nginx \
-    && sudo ufw allow 'Nginx HTTP' \
+MAINTAINER Vbaron <vbaron@student.42.fr>
 
-#ADD . /app/
-#WORKDIR /app
+RUN apt-get update
 
-EXPOSE 2368
+RUN apt-get -y install wget
+
+RUN apt-get -y install nginx
+
+ADD script.sh /usr/bin/script.sh
+
+RUN chmod 755 /usr/bin/script.sh
+
+EXPOSE 80
+
+ENTRYPOINT ["script.sh"]
+
+CMD ["bash"]

@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/07/09 12:05:31 by vbaron            #+#    #+#              #
-#    Updated: 2020/07/09 15:38:54 by vbaron           ###   ########.fr        #
+#    Updated: 2020/07/09 18:12:16 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,22 @@
 
 #PHP installation
 
-apt-get -y install php7.3
-apt-get -y install php7.3-cli php7.3-common php7.3-curl php7.3-gd php7.3-json php7.3-mbstring php7.3-mysql php7.3-xml
+apt-get install -y nginx
+apt-get install -y php7.3
+apt-get install -y php7.3-fpm
+apt-get install -y php7.3-mysql
+apt-get install -y php-common
+apt-get install -y php7.3-cli
+apt-get install -y php7.3-common
+apt-get install -y php7.3-json
+apt-get install -y php7.3-opcache
+apt-get install -y php7.3-readline
+apt-get install -y php-mbstring 
+apt-get install -y php-zip
+apt-get install -y php-gd
+apt-get install -y php-mysql
+apt-get install -y default-mysql-server
+apt-get install -y openssl
 
 #MariaDB installation
 

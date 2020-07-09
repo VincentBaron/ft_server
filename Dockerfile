@@ -6,7 +6,7 @@
 #    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/03 00:12:04 by vbaron            #+#    #+#              #
-#    Updated: 2020/07/09 16:12:57 by vbaron           ###   ########.fr        #
+#    Updated: 2020/07/09 18:15:54 by vbaron           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,7 @@ RUN chmod 755 /usr/bin/*
 
 RUN /usr/bin/installation.sh
 
-RUN rm config.sample.inc.php
-
-#RUN /var/lib/phpmyadmin/tmp/config.sh
+RUN /usr/bin/config.sh
 
 EXPOSE 80
 

@@ -2,4 +2,6 @@
 
 echo "J' aime la life"
 
-nginx -g 'daemon off;'
+#service nginx start
+
+sleep infinity && wait

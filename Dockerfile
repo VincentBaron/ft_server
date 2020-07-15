@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Dockerfile                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
+#    By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/03 00:12:04 by vbaron            #+#    #+#              #
-#    Updated: 2020/07/14 19:25:09 by vbaron           ###   ########.fr        #
+#    Updated: 2020/07/15 18:40:51 by vincentbaro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,25 +14,24 @@ FROM debian:buster
 
 MAINTAINER Vbaron <vbaron@student.42.fr>
 
-#RUN apt-get update
-
-#RUN apt-get -y install wget
-
-#RUN apt-get -y install nginx
+#Copying config files to container
 
 ADD srcs/* /usr/bin/
-
 RUN chmod 755 /usr/bin/*
 
-#RUN /usr/bin/installation.sh
+#Basics
+RUN apt-get update
+RUN apt-get upgrade
+RUN apt-get -y install wget
 
-#RUN /usr/bin/config.sh
-
-#Installing phpMyAdmin
-
-#RUN wget https://files.phpmyadmin.net/phpMyAdmin/4.9.0.1/phpMyAdmin-4.9.0.1-all-languages.tar.gz
-#RUN tar -zxvf phpMyAdmin-4.9.0.1-all-languages.tar.gz
-#RUN mv phpMyAdmin-4.9.0.1-all-languages /usr/share/phpMyAdmin
+#Installing Nginx, php, MariaDB, and configs to run php on Nginx
+RUN apt-get -y install nginx
+RUN chown www-data:www-data /usr/share/nginx/html/ -R
+RUN apt-get -y install mariadb-server mariadb-client
+RUN apt-get -y install php7.3 php7.3-fpm php7.3-mysql php-common php7.3-cli php7.3-common php7.3-json php7.3-opcache php7.3-readline
+RUN rm /etc/nginx/sites-enabled/default
+RUN cp /usr/bin/default.conf /etc/nginx/conf.d/
+RUN cp /usr/bin/info.php /usr/share/nginx/html/
 
 EXPOSE 80
 

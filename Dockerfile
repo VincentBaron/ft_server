@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Dockerfile                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+         #
+#    By: vincentbaron <vincentbaron@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/03 00:12:04 by vbaron            #+#    #+#              #
-#    Updated: 2020/07/17 16:04:36 by vbaron           ###   ########.fr        #
+#    Updated: 2020/07/20 17:33:53 by vincentbaro      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,8 @@ RUN chown -R www-data:www-data /var/www/html
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar -xzvf latest.tar.gz
 RUN mv wordpress /var/www/html
+RUN cp /usr/bin/wp-config.php /var/www/html/wordpress
+RUN rm /var/www/html/wordpress/wp-config-sample.php
 
 
 EXPOSE 80

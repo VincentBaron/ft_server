@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   config.inc.php                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: vbaron <vbaron@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/09 12:54:11 by vbaron            #+#    #+#             */
-/*   Updated: 2020/07/17 16:06:37 by vbaron           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 <?php
 /* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
@@ -49,10 +37,10 @@ $cfg['Servers'][$i]['AllowNoPassword'] = true;
  */
 
 /* User used to manipulate with storage */
-// $cfg['Servers'][$i]['controlhost'] = '';
+$cfg['Servers'][$i]['controlhost'] = '';
 // $cfg['Servers'][$i]['controlport'] = '';
-// $cfg['Servers'][$i]['controluser'] = 'root';
-// $cfg['Servers'][$i]['controlpass'] = '';
+$cfg['Servers'][$i]['controluser'] = 'root';
+$cfg['Servers'][$i]['controlpass'] = '';
 
 /* Storage database and tables */
 $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
